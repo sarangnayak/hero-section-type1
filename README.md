@@ -10,15 +10,20 @@ https://sarangnayak.github.io/hero-section-type1/
 ---
 🛠️ Features
 
-Fully responsive layout (desktop → tablet → mobile)
-
-Smooth animations and transitions (fade, slide, scale)
-
-Gradient overlays / image layering support
-
-Clean call-to-action styling
-
-Lightweight and dependency-free
+1. Fully responsive layout (desktop → tablet → mobile).
+2. Smooth animations and transitions (fade, slide, scale).
+3. Gradient overlays / image layering support.
+4. Clean call-to-action styling.
+5. Lightweight and dependency-free.
 
 Easy to customize and integrate into any website
 ---
+```
+📁 Project Structure
+hero-section-type1/
+├── index.html
+├── style.css
+├── script.js
+├── preview.png
+└── README.md
+```
