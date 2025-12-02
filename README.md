@@ -7,3 +7,18 @@ The layout emphasizes clarity, elegant typography, responsive behavior, and dyna
 
 Live Demo:
 https://sarangnayak.github.io/hero-section-type1/
+---
+🛠️ Features
+
+Fully responsive layout (desktop → tablet → mobile)
+
+Smooth animations and transitions (fade, slide, scale)
+
+Gradient overlays / image layering support
+
+Clean call-to-action styling
+
+Lightweight and dependency-free
+
+Easy to customize and integrate into any website
+---
