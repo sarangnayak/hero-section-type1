@@ -42,3 +42,24 @@ Or start a local server (optional):
 ```
 python3 -m http.server
 ```
+---
+🎨 Customization
+
+Modify to fit your brand or project:
+
+style.css — Colors, fonts, spacing, gradients, animations
+
+script.js — Interactive effects or trigger-based animations
+
+index.html — Content, headings, CTAs, structure
+---
+🤝 Contributing
+Contributions are welcome.
+Steps:
+Fork the repository
+Create a feature branch
+Commit changes
+Submit a pull request
+----
+📄 License
+Distributed under the MIT License.
