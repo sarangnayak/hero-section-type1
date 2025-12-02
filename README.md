@@ -27,3 +27,18 @@ hero-section-type1/
 ├── preview.png
 └── README.md
 ```
+---
+🚀 Getting Started
+1. Clone the repository
+```
+git clone https://github.com/sarangnayak/hero-section-type1.git
+cd hero-section-type1
+```
+2. Open in Browser
+
+Open index.html directly — no build steps required.
+
+Or start a local server (optional):
+```
+python3 -m http.server
+```
