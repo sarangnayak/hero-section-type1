@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let resolution = 25;
     let grid, cols, rows, cellAge;
     let userSparks = [];
+    let animationFrameId = null;
+    let isAnimating = true;
 
+    // Setup grid
     function setupGrid() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -19,12 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function create2DArray(cols, rows) {
         let arr = new Array(cols);
-        for (let i = 0; i < arr.length; i++) { arr[i] = new Array(rows).fill(0); }
+        for (let i = 0; i < arr.length; i++) { 
+            arr[i] = new Array(rows).fill(0); 
+        }
         return arr;
     }
     
     function randomizeGrid() {
-         for (let i = 0; i < cols; i++) {
+        for (let i = 0; i < cols; i++) {
             for (let j = 0; j < rows; j++) {
                 grid[i][j] = Math.random() > 0.8 ? 1 : 0;
                 cellAge[i][j] = grid[i][j];
@@ -68,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function drawGrid() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
         // Draw the main automaton grid
         for (let i = 0; i < cols; i++) {
             for (let j = 0; j < rows; j++) {
@@ -97,20 +103,46 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function gameLoop() {
+        if (!isAnimating) return;
+        
         grid = computeNextGeneration();
         drawGrid();
-        setTimeout(() => requestAnimationFrame(gameLoop), 250);
+        
+        setTimeout(() => {
+            animationFrameId = requestAnimationFrame(gameLoop);
+        }, 250);
     }
 
+    // Initialize automaton
     setupGrid();
     randomizeGrid();
     gameLoop();
     
+    // Handle window resize
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-        setupGrid();
-        randomizeGrid();
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+            setupGrid();
+            randomizeGrid();
+            gameLoop();
+        }, 250);
     });
 
+    // Page visibility management
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            isAnimating = false;
+        } else {
+            isAnimating = true;
+            gameLoop();
+        }
+    });
+
+    // Click to create sparks
     heroSection.addEventListener('click', (e) => {
         const rect = canvas.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -120,15 +152,35 @@ document.addEventListener('DOMContentLoaded', () => {
         userSparks.push({ x: col, y: row, life: 50, maxLife: 50 });
     });
 
-    // --- GSAP Intro & Parallax Animations ---
+    // --- GSAP Animations ---
     const heroContent = document.getElementById('hero-content');
-    gsap.from(heroContent, { duration: 1.5, autoAlpha: 0, y: 50, ease: "power3.out", delay: 0.5 });
+    
+    // Initial animation
+    gsap.from(heroContent, { 
+        duration: 1.5, 
+        autoAlpha: 0, 
+        y: 50, 
+        ease: "power3.out", 
+        delay: 0.5 
+    });
+
+    // Mouse move parallax effect
     window.addEventListener('mousemove', e => {
         const { clientX, clientY } = e;
         const x = (clientX / window.innerWidth - 0.5) * 40;
         const y = (clientY / window.innerHeight - 0.5) * 40;
-        gsap.to(heroContent, { duration: 1, x: -x, y: -y, ease: "power3.out" });
+        gsap.to(heroContent, { 
+            duration: 1, 
+            x: -x, 
+            y: -y, 
+            ease: "power3.out" 
+        });
+    });
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+        if (animationFrameId) {
+            cancelAnimationFrame(animationFrameId);
+        }
     });
 });
-
-
