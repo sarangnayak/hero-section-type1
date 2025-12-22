@@ -94,3 +94,27 @@ Edit `index.html` to update:
 - Subheadline
 - Call-to-action buttons
 - Background elements
+
+Modify Animations
+In style.css:
+
+css
+```
+/* Adjust animation timing */
+.hero-element {
+  animation-duration: 1.2s;
+  animation-timing-function: ease-out;
+}
+
+/* Change entrance effects */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+```
