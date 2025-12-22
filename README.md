@@ -118,3 +118,18 @@ css
   }
 }
 ```
+---
+
+###Update Colors
+###Modify CSS custom properties:
+
+css
+```
+:root {
+  --primary-color: #your-color;
+  --secondary-color: #your-color;
+  --accent-color: #your-color;
+  --text-color: #your-color;
+  --background-color: #your-color;
+}
+```
