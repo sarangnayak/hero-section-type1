@@ -133,3 +133,37 @@ css
   --background-color: #your-color;
 }
 ```
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. **Report Issues** – Found a bug? Open an issue
+2. **Suggest Features** – Have ideas for improvements?
+3. **Submit PRs** – Implement enhancements and submit pull requests
+4. **Improve Docs** – Help enhance the documentation
+
+### Development Workflow
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test across devices and browsers
+5. Submit a pull request
+
+## 📊 Project Status
+
+**Active** – Regularly maintained with 15+ successful deployments
+
+**Latest Update**: Enhanced animations and responsive improvements
+
+**Deployment History**: Continuous deployment via GitHub Pages
+
+## 🙏 Acknowledgments
+
+- **CSS-Tricks** – For animation techniques and best practices
+- **MDN Web Docs** – Comprehensive web development documentation
+- **Modern CSS Solutions** – Responsive design patterns
+- **GitHub Community** – For hosting and continuous deployment
+
+## 📚 Related Tags
+
+`css` `html` `animation-library` `animation-effects` `responsive-design` `ui-components`
