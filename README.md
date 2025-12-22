@@ -121,7 +121,7 @@ css
 ---
 
 ## Update Colors
-## Modify CSS custom properties:
+### Modify CSS custom properties:
 
 css
 ```
