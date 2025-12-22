@@ -120,8 +120,8 @@ css
 ```
 ---
 
-##Update Colors
-##Modify CSS custom properties:
+## Update Colors
+## Modify CSS custom properties:
 
 css
 ```
