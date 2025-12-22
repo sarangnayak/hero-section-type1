@@ -170,3 +170,4 @@ Contributions are welcome! Here's how you can help:
 
 > "Design is not just what it looks like and feels like. Design is how it works." – Steve Jobs  
 > This hero section is designed to work beautifully across all devices while creating memorable first impressions.
+---
